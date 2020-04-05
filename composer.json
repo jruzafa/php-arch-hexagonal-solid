@@ -1,0 +1,17 @@
+{
+    "name": "jose/php-arch-hexagonal",
+    "authors": [
+        {
+            "name": "Jose Ruzafa",
+            "email": "jose.ruzafa@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-0": {
+            "Application\\":"Application/",
+            "Domain\\":"Domain/",
+            "Infraestructure\\":"Infraestructure/"
+        }
+    }
+}

@@ -5,15 +5,17 @@ use Domain\Post;
 use Domain\PostId;
 use Domain\PostRepository;
 
-final class PostRepositoryMysql implements PostRepository {
+final class PostRepositoryInMemory implements PostRepository{
+
+    private $posts = [];
 
     public function save( Post $post )
     {
-        // TODO: Implement save() method.
+        $this->posts[$post->id()] = $post;
     }
 
     public function find( $postId )
     {
-        // TODO: Implement find() method.
+        return $this->posts[$postId];
     }
 }

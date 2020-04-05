@@ -7,9 +7,11 @@ final class Post {
     private $name;
     private $content;
 
-    public function __construct()
+    public function __construct($id, $name, $content)
     {
-
+        $this->id = $id;
+        $this->name = $name;
+        $this->content = $content;
     }
 
     /**
@@ -34,6 +36,11 @@ final class Post {
     public function content()
     {
         return $this->content;
+    }
+
+    public function __toString()
+    {
+       return sprintf('id: %s, name: %s, content: %s',$this->id, $this->name, $this->name);
     }
 
 }
