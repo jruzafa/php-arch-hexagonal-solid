@@ -2,6 +2,7 @@
 namespace Application;
 
 use Domain\Post;
+use Domain\PostName;
 use Domain\PostRepository;
 
 final class PostCreator {
@@ -18,8 +19,9 @@ final class PostCreator {
 
     public function execute(){
 
-        $post = new Post(1, 'hello', '<h1>hello world content....</h1>');
-        $post2 = new Post(2, 'hello 2', '<h1>hello world content from 2....</h1>');
+        $post =  Post::create(1, new PostName('hello'), '<h1>hello world content....</h1>');
+        $post2 = Post::create(2, new PostName('hello 2'), '<h1>hello world content from 2....</h1>');
+      //  $post2 = Post::create(2, new PostName(''), '<h1>hello world content from 2....</h1>');
 
         $this->postRepository->save($post);
         $this->postRepository->save($post2);

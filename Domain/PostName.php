@@ -3,7 +3,7 @@ namespace Domain;
 
 use Domain\ValueObject\StringValueObject;
 
-final class PostId extends StringValueObject {
+final class PostName extends StringValueObject {
 
     public function __construct( string $value)
     {
@@ -17,9 +17,9 @@ final class PostId extends StringValueObject {
      */
     private function validateValue( string $value )
     {
-        if (is_null($value)) {
+        if (is_null($value) || '' === $value) {
 
-            throw new \InvalidArgumentException(sprintf('the field %s is empty', $value));
+            throw new \InvalidArgumentException(sprintf('the field %s is empty', self::class));
         }
     }
 }
