@@ -46,6 +46,8 @@ final class Post {
     public static function create($id, PostName $name, $content){
         $post = new self( $id, $name, $content);
 
+        // TODO implement event
+
         return $post;
     }
 

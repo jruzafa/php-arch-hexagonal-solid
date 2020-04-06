@@ -17,8 +17,7 @@ final class PostName extends StringValueObject {
      */
     private function validateValue( string $value )
     {
-        if (is_null($value) || '' === $value) {
-
+        if (('' === $value) || is_null($value)) {
             throw new \InvalidArgumentException(sprintf('the field %s is empty', self::class));
         }
     }
